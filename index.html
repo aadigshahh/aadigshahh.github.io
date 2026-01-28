@@ -33,81 +33,72 @@
       line-height: 1.65;
     }
 
-    /* FLOATING HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(11,11,13,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
+    /* NAV */
+    nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav-left {
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .nav-right a {
-      margin-left: 1.2rem;
-      color: var(--text);
+    nav a {
       text-decoration: none;
-      font-size: 1rem;
+      color: var(--text);
+      margin-left: 1.2rem;
+      font-weight: 500;
     }
 
-    .nav-right a:hover {
+    nav a:hover {
       color: var(--accent);
     }
 
+    .nav-right i {
+      font-size: 1.1rem;
+    }
+
     /* PAGE */
-    main {
-      max-width: 680px;
-      margin: 4rem auto 6rem;
+    .page {
+      max-width: 720px;
+      margin: 5rem auto 6rem;
       padding: 0 1.5rem;
     }
 
-    section {
+    /* HERO */
+    .hero {
       margin-bottom: 4.5rem;
     }
 
-    /* PHOTO SECTION */
-    .photo {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-
-    .photo img {
-      width: 150px;
-      height: 150px;
+    .hero img {
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 14px;
       border: 1px solid var(--border);
       background: var(--panel);
+      margin-bottom: 1.5rem;
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin: 0 0 0.5rem;
+      font-size: 2.3rem;
+      font-weight: 600;
+      margin: 0 0 1rem;
     }
 
-    .sub {
-      color: var(--muted);
-      font-size: 0.95rem;
+    .intro {
+      font-size: 1.05rem;
+      color: #e5e7eb;
+      margin-bottom: 1.2rem;
+    }
+
+    section {
+      margin-top: 4.5rem;
     }
 
     h2 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
     }
 
     p {
@@ -123,32 +114,15 @@
       margin-bottom: 0.4rem;
     }
 
-    /* RESUME LINK */
-    .resume-link {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: var(--accent);
-      font-weight: 500;
-      text-decoration: none;
-    }
-
-    .resume-link:hover {
-      text-decoration: underline;
-    }
-
     /* PROJECTS GRID */
     .projects {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     @media (max-width: 700px) {
-      .photo {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
       .projects {
         grid-template-columns: 1fr;
       }
@@ -179,10 +153,11 @@
     }
 
     .card-content {
-      padding: 1.1rem;
+      padding: 1.2rem;
     }
 
     .card-title {
+      font-size: 1.05rem;
       font-weight: 600;
       margin-bottom: 0.3rem;
     }
@@ -191,58 +166,49 @@
       font-size: 0.9rem;
       color: var(--muted);
     }
+
+    footer {
+      margin-top: 5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <div class="nav-left">Aadi Shah</div>
-    <div class="nav-right">
-      <a href="mailto:agshah@usc.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" title="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-    </div>
+<nav>
+  <strong>AS</strong>
+
+  <div class="nav-right">
+    <a href="mailto:agshah@usc.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" title="LinkedIn">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <a href="Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
   </div>
-</header>
+</nav>
 
-<main>
+<main class="page">
 
-  <!-- PHOTO + FREE TIME -->
-  <section class="photo">
+  <!-- ABOUT -->
+  <div class="hero">
     <img src="/images/home/me.jpeg" alt="Photo of Aadi Shah">
 
-    <div>
-      <h1>Aadi Shah</h1>
-      <p class="sub">
-        Mechanical engineering student · Singapore → USC<br>
-        Road biking, cars & planes, hiking, gym, cooking
-      </p>
-    </div>
-  </section>
+    <h1>Aadi Shah</h1>
 
-  <!-- ABOUT ME -->
-  <section>
-    <h2>About Me</h2>
-
-    <p>
+    <p class="intro">
       I’m a mechanical engineering student at the University of Southern California with
       a minor in business finance. I’m interested in building hardware systems that have
       to work outside of clean, controlled environments.
     </p>
 
-    <p>
+    <p class="intro">
       I’m originally from Singapore, and growing up there shaped many of the problems I’m
       drawn to—dense cities, heavy infrastructure demands, and systems that need to
       function reliably despite environmental and operational constraints.
     </p>
-
-    <a class="resume-link" href="Aadi_Shah_Resume.pdf" target="_blank">
-      → View resume
-    </a>
-  </section>
+  </div>
 
   <!-- PROJECTS -->
   <section>
@@ -270,7 +236,7 @@
         <img src="/images/autonomous-vehicle/cad-car.png">
         <div class="card-content">
           <div class="card-title">Autonomous Vehicle Design</div>
-          <div class="card-meta">Torque-driven vehicle</div>
+          <div class="card-meta">Torque-driven vehicle system</div>
         </div>
       </a>
 
@@ -278,7 +244,7 @@
         <img src="/images/chain-shield/usc-racing.jpg">
         <div class="card-content">
           <div class="card-title">USC Racing – Chain Shield</div>
-          <div class="card-meta">Drivetrain integration</div>
+          <div class="card-meta">Drivetrain component design</div>
         </div>
       </a>
 
@@ -300,6 +266,10 @@
 
     </div>
   </section>
+
+  <footer>
+    Detailed project write-ups are available by clicking on individual projects.
+  </footer>
 
 </main>
 

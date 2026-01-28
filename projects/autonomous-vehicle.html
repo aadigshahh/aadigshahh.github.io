@@ -2,55 +2,86 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Autonomous Vehicle Design Project | Aadi Shah</title>
+  <title>Autonomous Vehicle Design | Aadi Shah</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
       color: #111;
+      background: #fff;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
       padding: 1.2rem 2rem;
       border-bottom: 1px solid #e5e7eb;
     }
+
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
       color: #111;
       font-weight: 500;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .container {
       max-width: 900px;
-      margin: 3rem auto;
+      margin: 3rem auto 4rem;
       padding: 0 1.5rem;
       line-height: 1.7;
     }
+
+    h1 {
+      margin-bottom: 0.4rem;
+    }
+
     .meta {
       color: #6b7280;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.8rem;
     }
+
+    .intro {
+      max-width: 720px;
+      color: #444;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
     img {
       width: 100%;
-      border-radius: 8px;
+      max-height: 220px;
+      object-fit: contain;
+      display: block;
+      margin: 1.5rem auto 0.5rem;
+      border-radius: 6px;
       border: 1px solid #e5e7eb;
-      margin: 2rem 0 0.5rem;
+      background: #fafafa;
+      padding: 0.4rem;
     }
+
     .caption {
       font-size: 0.9rem;
       color: #555;
       margin-bottom: 2rem;
     }
+
     ul {
       margin-left: 1.2rem;
     }
   </style>
 </head>
+
 <body>
 
 <nav>
@@ -62,47 +93,36 @@
 </nav>
 
 <div class="container">
-  <h1>Autonomous Vehicle Design Project (King of the Hill)</h1>
-  <div class="meta">Design Lead · March 2024 – May 2024</div>
+  <h1>Autonomous Vehicle Design Project</h1>
+  <div class="meta">“King of the Hill” · Spring 2024</div>
 
-  <p>
-    This project involved the design and construction of a small autonomous vehicle
-    built to compete in a torque- and speed-driven hill-climbing challenge. The vehicle
-    was required to repeatedly climb a steep incline under dynamic load conditions while
-    maintaining mechanical reliability.
+  <p class="intro">
+    This project involved designing and building a small autonomous vehicle for a
+    hill-climbing challenge where performance depended on torque, traction, and mechanical
+    reliability rather than advanced autonomy. The vehicle was tested repeatedly under
+    dynamic loading and competitive conditions.
   </p>
 
-  <p>
-    My focus was on mechanical system design and integration rather than advanced autonomy.
-    The project emphasized real-world constraints such as drivetrain alignment, structural
-    stiffness, wiring robustness, and repeatable performance under repeated testing.
+  <p class="intro">
+    My focus was primarily on the mechanical system design and integration—making sure the
+    chassis, drivetrain, and component placement could survive repeated runs and perform
+    consistently.
   </p>
-
-  <h2>Key Contributions</h2>
-  <ul>
-    <li>Designed and reinforced a wooden chassis to reduce flex under high torque loads</li>
-    <li>Optimized placement of motors, battery, Arduino, and sensors for stability and accessibility</li>
-    <li>Improved drivetrain alignment to reduce mechanical losses and inconsistent behavior</li>
-    <li>Debugged performance issues caused by wiring movement, voltage drop, and mounting flexibility</li>
-    <li>Tuned Arduino control logic once mechanical reliability was achieved</li>
-  </ul>
 
   <h2>Design Focus</h2>
   <ul>
-    <li>Mechanical robustness under dynamic loading</li>
-    <li>Drivetrain consistency and alignment</li>
-    <li>System-level integration of mechanical and electrical components</li>
+    <li>Chassis stiffness and structural reinforcement under torque load</li>
+    <li>Drivetrain alignment to reduce mechanical losses</li>
+    <li>Component placement for stability, accessibility, and wiring robustness</li>
     <li>Iterative debugging through physical testing</li>
   </ul>
 
-  <!-- OPTIONAL IMAGE SECTION: add when you have photos -->
-  <!--
-  <img src="../images/autonomous-vehicle/vehicle-1.jpg" alt="Autonomous vehicle chassis">
-  <div class="caption">Wooden chassis and drivetrain layout used for hill-climbing competition.</div>
-  -->
+  <img src="../images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD assembly">
+  <div class="caption">
+    Full vehicle CAD assembly used to evaluate packaging, drivetrain layout, and subsystem integration.
+  </div>
 
 </div>
 
 </body>
 </html>
-

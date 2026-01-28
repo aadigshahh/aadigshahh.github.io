@@ -5,36 +5,47 @@
   <title>Aadi Shah</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-    /* ===== COLORS ===== */
     :root {
       --bg: #0b0b0d;
+      --panel: #020617;
       --text: #f5f5f7;
       --muted: #9ca3af;
       --accent: #38bdf8;
       --border: #1f2933;
-      --panel: #020617;
     }
+
+    * { box-sizing: border-box; }
 
     body {
-      font-family: system-ui, sans-serif;
       margin: 0;
-      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
     }
 
-    /* ===== NAV ===== */
+    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 1.2rem 2rem;
       border-bottom: 1px solid var(--border);
     }
 
     nav a {
-      margin-left: 1.5rem;
       text-decoration: none;
       color: var(--text);
+      margin-left: 1.2rem;
       font-weight: 500;
     }
 
@@ -42,86 +53,124 @@
       color: var(--accent);
     }
 
-    /* ===== PAGE WRAPPER ===== */
-    .container {
-      max-width: 860px;
-      margin: 5rem auto;
-      padding: 0 1.5rem;
-      line-height: 1.65;
+    .nav-right i {
+      font-size: 1.1rem;
     }
 
-    /* ===== HERO ===== */
+    /* PAGE */
+    .page {
+      max-width: 720px;
+      margin: 5rem auto 6rem;
+      padding: 0 1.5rem;
+    }
+
+    /* HERO */
     .hero {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-      margin-bottom: 4rem;
+      margin-bottom: 4.5rem;
     }
 
     .hero img {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 14px;
       border: 1px solid var(--border);
       background: var(--panel);
-    }
-
-    .hero-text {
-      max-width: 520px;
+      margin-bottom: 1.5rem;
     }
 
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.3rem;
+      font-weight: 600;
       margin: 0 0 1rem;
     }
 
     .intro {
       font-size: 1.05rem;
       color: #e5e7eb;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    /* ===== SECTIONS ===== */
+    section {
+      margin-top: 4.5rem;
+    }
+
     h2 {
-      font-size: 1.4rem;
-      margin-top: 3.5rem;
-      margin-bottom: 1rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
     }
 
     p {
-      max-width: 680px;
       color: #e5e7eb;
+      margin-bottom: 1.2rem;
     }
 
     ul {
-      margin-left: 1.2rem;
-      max-width: 680px;
+      padding-left: 1.2rem;
     }
 
     li {
       margin-bottom: 0.4rem;
-      color: #e5e7eb;
     }
 
-    .footer-note {
-      margin-top: 4rem;
+    /* PROJECTS GRID */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--text);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: contain;
+      background: #020617;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-content {
+      padding: 1.2rem;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-meta {
       font-size: 0.9rem;
       color: var(--muted);
     }
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 700px) {
-      .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-      }
-
-      .hero img {
-        width: 140px;
-        height: 140px;
-      }
+    footer {
+      margin-top: 5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
   </style>
 </head>
@@ -130,88 +179,99 @@
 
 <nav>
   <strong>AS</strong>
-  <div>
-    <a href="projects.html">Projects</a>
+
+  <div class="nav-right">
+    <a href="mailto:agshah@usc.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" title="LinkedIn">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
     <a href="Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
   </div>
 </nav>
 
-<div class="container">
+<main class="page">
 
-  <!-- ===== HERO ===== -->
+  <!-- ABOUT -->
   <div class="hero">
     <img src="/images/home/me.jpeg" alt="Photo of Aadi Shah">
 
-    <div class="hero-text">
-      <h1>Aadi Shah</h1>
+    <h1>Aadi Shah</h1>
 
-      <p class="intro">
-        I’m a mechanical engineering student at the University of Southern California
-        with a minor in business finance. I like building hardware systems that have to
-        work outside of clean, controlled environments.
-      </p>
+    <p class="intro">
+      I’m a mechanical engineering student at the University of Southern California with
+      a minor in business finance. I’m interested in building hardware systems that have
+      to work outside of clean, controlled environments.
+    </p>
 
-      <p class="intro">
-        I’m originally from Singapore, and growing up there shaped many of the problems
-        I’m interested in—dense cities, heavy infrastructure demands, and systems that
-        need to function reliably despite environmental and operational constraints.
-      </p>
-    </div>
+    <p class="intro">
+      I’m originally from Singapore, and growing up there shaped many of the problems I’m
+      drawn to—dense cities, heavy infrastructure demands, and systems that need to
+      function reliably despite environmental and operational constraints.
+    </p>
   </div>
 
-  <!-- ===== WHAT I WORK ON ===== -->
-  <h2>What I Work On</h2>
+  <!-- PROJECTS -->
+  <section>
+    <h2>Projects</h2>
 
-  <p>
-    Most of my work revolves around hands-on mechanical design and hardware system
-    integration. I’m drawn to projects where hardware decisions directly impact
-    performance, reliability, and user behavior.
-  </p>
+    <div class="projects">
 
-  <ul>
-    <li>Mechanical design and CAD (SolidWorks, Siemens NX)</li>
-    <li>Hardware-focused system integration</li>
-    <li>Rapid prototyping and 3D printing</li>
-    <li>Designing for deployment, maintenance, and failure modes</li>
-  </ul>
+      <a class="card" href="projects/weather-drone.html">
+        <img src="/images/weather-drone/weather-drone.jpg">
+        <div class="card-content">
+          <div class="card-title">Traffic Monitoring Weather Drone</div>
+          <div class="card-meta">Hardware startup · In progress</div>
+        </div>
+      </a>
 
-  <!-- ===== CURRENTLY ===== -->
-  <h2>What I’m Currently Building</h2>
+      <a class="card" href="projects/vape-case.html">
+        <img src="/images/vape/vape-case.jpg">
+        <div class="card-content">
+          <div class="card-title">Vape Lock Case</div>
+          <div class="card-meta">Mechanical + hardware system</div>
+        </div>
+      </a>
 
-  <p>
-    I’m currently working on a hardware startup project focused on 3D-printed,
-    weather-capable drones for traffic monitoring in India. The goal is to build
-    platforms that can operate reliably during monsoon seasons, where rain, wind,
-    humidity, and poor visibility cause most off-the-shelf systems to fail.
-  </p>
+      <a class="card" href="projects/autonomous-vehicle.html">
+        <img src="/images/autonomous-vehicle/cad-car.png">
+        <div class="card-content">
+          <div class="card-title">Autonomous Vehicle Design</div>
+          <div class="card-meta">Torque-driven vehicle system</div>
+        </div>
+      </a>
 
-  <p>
-    Alongside this, I stay involved in aircraft, vehicle, and propulsion-related
-    projects to continue building system-level intuition—from conceptual aircraft
-    design to drivetrain and autonomous vehicle work.
-  </p>
+      <a class="card" href="projects/chain-shield.html">
+        <img src="/images/chain-shield/usc-racing.jpg">
+        <div class="card-content">
+          <div class="card-title">USC Racing – Chain Shield</div>
+          <div class="card-meta">Drivetrain component design</div>
+        </div>
+      </a>
 
-  <!-- ===== INTERESTS ===== -->
-  <h2>Outside of Work</h2>
+      <a class="card" href="projects/cardinal-sb.html">
+        <img src="/images/cardinal-sb/cardinalsb.png">
+        <div class="card-content">
+          <div class="card-title">Cardinal SB – Aircraft Design</div>
+          <div class="card-meta">Conceptual aircraft design</div>
+        </div>
+      </a>
 
-  <p>
-    Outside of engineering, I spend a lot of time around vehicles and outdoors. I’m a
-    big car and aviation guy, enjoy road biking and the gym, and like getting outside
-    to hike when I can. I also love cooking in my free time.
-  </p>
+      <a class="card" href="projects/cad-projects.html">
+        <img src="/images/cad/cad-part-exploded.png">
+        <div class="card-content">
+          <div class="card-title">CAD Projects</div>
+          <div class="card-meta">Coursework & self-directed</div>
+        </div>
+      </a>
 
-  <ul>
-    <li>Road biking and training at the gym</li>
-    <li>Cars, planes, and Formula 1</li>
-    <li>Hiking and being outdoors</li>
-    <li>Cooking and experimenting with food</li>
-  </ul>
+    </div>
+  </section>
 
-  <p class="footer-note">
-    Detailed project write-ups and technical work can be found in the Projects section.
-  </p>
+  <footer>
+    Detailed project write-ups are available by clicking on individual projects.
+  </footer>
 
-</div>
+</main>
 
 </body>
 </html>

@@ -32,7 +32,7 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 4rem auto 4rem;
       padding: 0 1.5rem;
     }
@@ -41,26 +41,50 @@
       margin-bottom: 2.5rem;
     }
 
-    .project {
-      margin-bottom: 2.8rem;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
 
-    .project a {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: #111;
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
       text-decoration: none;
+      color: #111;
+      background: #fff;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .project a:hover {
-      text-decoration: underline;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
 
-    .meta {
-      color: #6b7280;
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: #fafafa;
+      padding: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .card-content {
+      padding: 1.2rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-meta {
       font-size: 0.9rem;
-      margin-top: 0.4rem;
-      max-width: 700px;
+      color: #6b7280;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -78,54 +102,75 @@
 <div class="container">
   <h1>Projects</h1>
 
-  <div class="project">
-    <a href="projects/weather-drone.html">Traffic Monitoring Weather Drone</a>
-    <div class="meta">
-      Hardware startup focused on 3D-printed, weather-capable drone platforms designed
-      to operate reliably during monsoon seasons in dense urban environments.
-    </div>
-  </div>
+  <div class="grid">
 
-  <div class="project">
-    <a href="projects/vape-case.html">Vape Lock Case</a>
-    <div class="meta">
-      Mechanical and hardware-based system exploring controlled reduction of vaping
-      behavior through physical constraint and phone-connected control.
-    </div>
-  </div>
+    <!-- WEATHER DRONE -->
+    <a class="card" href="projects/weather-drone.html">
+      <img src="/images/weather-drone/weather-drone.jpg" alt="Weather drone">
+      <div class="card-content">
+        <div class="card-title">Traffic Monitoring Weather Drone</div>
+        <div class="card-meta">
+          Hardware startup · 3D-printed, weather-capable drones for monsoon conditions in India
+        </div>
+      </div>
+    </a>
 
-  <div class="project">
-    <a href="projects/autonomous-vehicle.html">Autonomous Vehicle Design Project</a>
-    <div class="meta">
-      Design and construction of a small autonomous vehicle optimized for torque-driven
-      hill climbing under dynamic load conditions.
-    </div>
-  </div>
+    <!-- VAPE LOCK CASE -->
+    <a class="card" href="projects/vape-case.html">
+      <img src="/images/vape/vape-case.jpg" alt="Vape device">
+      <div class="card-content">
+        <div class="card-title">Vape Lock Case</div>
+        <div class="card-meta">
+          Mechanical + hardware system to regulate vaping behavior via physical constraint
+        </div>
+      </div>
+    </a>
 
-  <div class="project">
-    <a href="projects/chain-shield.html">USC Racing – Chain Shield Cover</a>
-    <div class="meta">
-      Design and integration of a drivetrain chain shield for the USC Racing vehicle,
-      focusing on clearance, alignment, and real-world manufacturing constraints.
-    </div>
-  </div>
+    <!-- AUTONOMOUS VEHICLE -->
+    <a class="card" href="projects/autonomous-vehicle.html">
+      <img src="/images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD">
+      <div class="card-content">
+        <div class="card-title">Autonomous Vehicle Design</div>
+        <div class="card-meta">
+          Torque-optimized vehicle design under dynamic load conditions
+        </div>
+      </div>
+    </a>
 
-  <div class="project">
-    <a href="projects/cardinal-sb.html">Cardinal SB – Aircraft Design</a>
-    <div class="meta">
-      Team-based conceptual aircraft design project focused on a long-range,
-      large-cabin business jet developed as part of AME 261.
-    </div>
-  </div>
+    <!-- CHAIN SHIELD -->
+    <a class="card" href="projects/chain-shield.html">
+      <img src="/images/chain-shield/usc-racing.jpg" alt="USC Racing vehicle">
+      <div class="card-content">
+        <div class="card-title">USC Racing – Chain Shield</div>
+        <div class="card-meta">
+          Drivetrain component design and vehicle integration
+        </div>
+      </div>
+    </a>
 
-  <div class="project">
-    <a href="projects/cad-projects.html">CAD Projects</a>
-    <div class="meta">
-      Collection of coursework and self-directed CAD exercises focused on parametric
-      modeling, assemblies, and manufacturable geometry.
-    </div>
-  </div>
+    <!-- CARDINAL SB -->
+    <a class="card" href="projects/cardinal-sb.html">
+      <img src="/images/cardinal-sb/cardinal-3view.png" alt="Cardinal SB aircraft">
+      <div class="card-content">
+        <div class="card-title">Cardinal SB – Aircraft Design</div>
+        <div class="card-meta">
+          Conceptual long-range business jet design (AME 261)
+        </div>
+      </div>
+    </a>
 
+    <!-- CAD PROJECTS -->
+    <a class="card" href="projects/cad-projects.html">
+      <img src="/images/cad/cad-part-exploded.png" alt="CAD assembly">
+      <div class="card-content">
+        <div class="card-title">CAD Projects</div>
+        <div class="card-meta">
+          Coursework and self-directed CAD modeling and assemblies
+        </div>
+      </div>
+    </a>
+
+  </div>
 </div>
 
 </body>

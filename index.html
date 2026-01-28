@@ -266,6 +266,130 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* WORK SECTION */
+.work-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.work-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0)),
+    var(--panel);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.work-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.work-item.active {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.2),
+    0 25px 60px rgba(0,0,0,0.55);
+}
+
+.work-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.work-left img {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #020617;
+}
+
+.work-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.work-role {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.work-date {
+  font-size: 0.9rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+/* WORK SECTION */
+.work-list {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.work-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0)),
+    var(--panel);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.work-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.work-item.active {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.2),
+    0 25px 60px rgba(0,0,0,0.55);
+}
+
+.work-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.work-left img {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #020617;
+}
+
+.work-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.work-role {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.work-date {
+  font-size: 0.9rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
   </style>
 </head>
 
@@ -315,6 +439,82 @@
       and photography.
     </p>
   </div>
+
+  <!-- WORK -->
+<section>
+  <h2>Work</h2>
+
+  <div class="work-list">
+
+    <div class="work-item active">
+      <div class="work-left">
+        <img src="/images/work/stealth.png" alt="Stealth Startup">
+        <div>
+          <div class="work-title">Stealth Drone Startup</div>
+          <div class="work-role">Founder · Hardware & Systems</div>
+        </div>
+      </div>
+      <div class="work-date">May 2025 – Present</div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-left">
+        <img src="/images/work/rpl.png" alt="USC Rocket Propulsion Lab">
+        <div>
+          <div class="work-title">USC Rocket Propulsion Lab</div>
+          <div class="work-role">Analysis / Manufacturing Engineer</div>
+        </div>
+      </div>
+      <div class="work-date">Sep 2024 – Present</div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-left">
+        <img src="/images/work/usc-racing.png" alt="USC Racing">
+        <div>
+          <div class="work-title">USC Racing (SAE)</div>
+          <div class="work-role">Mechanical Engineer</div>
+        </div>
+      </div>
+      <div class="work-date">Dec 2023 – Present</div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-left">
+        <img src="/images/work/ey.png" alt="Ernst & Young">
+        <div>
+          <div class="work-title">Ernst & Young (EY)</div>
+          <div class="work-role">Business & Technology Consulting Intern</div>
+        </div>
+      </div>
+      <div class="work-date">May 2025 – Aug 2025</div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-left">
+        <img src="/images/work/bain.png" alt="Bain Capital">
+        <div>
+          <div class="work-title">Bain Capital</div>
+          <div class="work-role">Technical Analyst Intern</div>
+        </div>
+      </div>
+      <div class="work-date">Jun 2024 – Aug 2024</div>
+    </div>
+
+    <div class="work-item">
+      <div class="work-left">
+        <img src="/images/work/draper.png" alt="Draper Associates">
+        <div>
+          <div class="work-title">Draper Associates</div>
+          <div class="work-role">Venture Scout</div>
+        </div>
+      </div>
+      <div class="work-date">Dec 2023 – Present</div>
+    </div>
+
+  </div>
+</section>
+
 
   <!-- PROJECTS -->
   <section>

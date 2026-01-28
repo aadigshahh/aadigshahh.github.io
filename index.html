@@ -33,7 +33,9 @@
       line-height: 1.65;
     }
 
-    /* FLOATING SPOTLIGHT HEADER */
+    /* =========================
+       FLOATING SPOTLIGHT HEADER
+       ========================= */
     .header-wrap {
       position: sticky;
       top: 1.2rem;
@@ -55,7 +57,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.35);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .header.scrolled {
+      box-shadow: 0 28px 70px rgba(0,0,0,0.55);
     }
 
     .header-left {
@@ -66,7 +73,7 @@
 
     .logo {
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       letter-spacing: 0.08em;
       color: var(--muted);
       text-decoration: none;
@@ -79,7 +86,7 @@
     .name {
       font-size: 1.15rem;
       font-weight: 700;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }
 
     .header-right a {
@@ -102,7 +109,7 @@
 
     /* HERO */
     .hero {
-      margin-bottom: 4.5rem;
+      margin-bottom: 5rem;
     }
 
     .hero img {
@@ -120,23 +127,23 @@
       font-size: 2.4rem;
       font-weight: 700;
       margin: 0 0 1.5rem;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.035em;
     }
 
     .intro {
       font-size: 1.05rem;
-      color: #e5e7eb;
+      color: #d1d5db;
       margin-bottom: 1.4rem;
     }
 
     section {
-      margin-top: 4.5rem;
+      margin-top: 6rem;
     }
 
     h2 {
       font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.6rem;
     }
 
     /* PROJECTS GRID */
@@ -155,7 +162,13 @@
 
     .card {
       position: relative;
-      background: var(--panel);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.035),
+          rgba(255,255,255,0)
+        ),
+        var(--panel);
       border: 1px solid var(--border);
       border-radius: 14px;
       overflow: hidden;
@@ -202,16 +215,19 @@
       background: rgba(2,6,23,0.8);
       padding: 6px;
       border-radius: 6px;
+      transition: transform 0.15s ease, color 0.15s ease;
     }
 
     .card:hover .external {
       color: var(--accent);
+      transform: translateY(-2px) translateX(2px);
     }
 
     footer {
       margin-top: 5rem;
       font-size: 0.9rem;
       color: var(--muted);
+      opacity: 0.85;
     }
 
     footer a {
@@ -251,15 +267,18 @@
   <div class="hero">
     <img src="/images/home/me.jpeg" alt="Photo of Aadi Shah">
 
-    <h1>Aadi Shah</h1>
+    <h1>Mechanical Engineering · Hardware Systems</h1>
 
     <p class="intro">
-      Hi, I’m Aadi - a Mechanical Engineering student at USC focused on designing, building,
-      and testing real-world systems. I work hands-on with CAD-driven mechanical design,
-      prototyping, and hardware integration across rocket propulsion, autonomous vehicles,
-      and drivetrain-level mechanical systems. I’m also building a stealth drone startup,
-      where I design and test weather-resilient airframes and hardware for dense urban
-      environments.
+      Hi, I’m Aadi — a Mechanical Engineering student at USC focused on designing, building,
+      and testing real-world hardware systems. I work hands-on with CAD-driven mechanical
+      design, prototyping, and system integration across rocket propulsion, autonomous
+      vehicles, and drivetrain-level components.
+    </p>
+
+    <p class="intro">
+      I’m also building a stealth drone startup, where I design and test weather-resilient
+      airframes and hardware for dense urban environments.
     </p>
 
     <p class="intro">
@@ -268,18 +287,21 @@
       high-stakes technical and operational decisions.
     </p>
 
-    <p class="intro">
-      Outside of work, I enjoy road biking, running, hiking, cooking, Formula 1, cricket,
-      and photography.
+    <p class="intro" style="opacity:0.75">
+      Previously at Bain Capital, Ernst & Young · Building a hardware startup
     </p>
   </div>
 
   <!-- PROJECTS -->
   <section>
     <h2>Projects</h2>
+    <p style="color:#9ca3af; margin-top:-0.5rem;">
+      Selected work spanning hardware startups, academic design, and hands-on mechanical systems.
+    </p>
 
     <div class="projects">
 
+      <!-- 1 -->
       <a class="card" href="projects/weather-drone.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/home/drone.jpg" alt="Weather drone">
@@ -289,15 +311,7 @@
         </div>
       </a>
 
-      <a class="card" href="projects/vape-case.html">
-        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
-        <img src="/images/vape/vape-case.jpg" alt="Vape lock case">
-        <div class="card-content">
-          <div class="card-title">Vape Lock Case</div>
-          <div class="card-meta">Mechanical + hardware system</div>
-        </div>
-      </a>
-
+      <!-- 2 -->
       <a class="card" href="projects/autonomous-vehicle.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD">
@@ -307,6 +321,7 @@
         </div>
       </a>
 
+      <!-- 3 -->
       <a class="card" href="projects/chain-shield.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/chain-shield/usc-racing.jpg" alt="USC Racing chain shield">
@@ -316,6 +331,7 @@
         </div>
       </a>
 
+      <!-- 4 -->
       <a class="card" href="projects/cardinal-sb.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/cardinal-sb/cardinalsb.png" alt="Cardinal SB aircraft">
@@ -325,6 +341,17 @@
         </div>
       </a>
 
+      <!-- 5 -->
+      <a class="card" href="projects/vape-case.html">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/vape/vape-case.jpg" alt="Vape lock case">
+        <div class="card-content">
+          <div class="card-title">Vape Lock Case</div>
+          <div class="card-meta">Mechanical + hardware system</div>
+        </div>
+      </a>
+
+      <!-- 6 -->
       <a class="card" href="projects/cad-projects.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/cad/cad-part-exploded.png" alt="CAD projects">
@@ -338,11 +365,18 @@
   </section>
 
   <footer>
-    Made with ❤️ by Aadi — if you’re reading this,
-    <a href="mailto:agshah@usc.edu">let’s chat!</a>
+    Made with care by Aadi ❤️ — if you’re reading this,
+    <a href="mailto:agshah@usc.edu">let’s chat</a>
   </footer>
 
 </main>
+
+<script>
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+</script>
 
 </body>
 </html>

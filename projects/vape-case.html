@@ -11,39 +11,47 @@
       color: #111;
       background: #fff;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
       padding: 1.2rem 2rem;
       border-bottom: 1px solid #e5e7eb;
     }
+
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
       color: #111;
       font-weight: 500;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .container {
       max-width: 900px;
       margin: 3rem auto 4rem;
       padding: 0 1.5rem;
       line-height: 1.7;
     }
+
     h1 {
       margin-bottom: 0.4rem;
     }
+
     .meta {
       color: #6b7280;
       margin-bottom: 2rem;
     }
+
     .intro {
       max-width: 720px;
       color: #444;
       margin-bottom: 1.6rem;
     }
+
     img {
       display: block;
       width: 100%;
@@ -55,16 +63,19 @@
       background: #fafafa;
       padding: 0.4rem;
     }
+
     .caption {
       font-size: 0.9rem;
       color: #555;
       text-align: center;
       margin-bottom: 2rem;
     }
+
     h2 {
       margin-top: 2.5rem;
       margin-bottom: 1rem;
     }
+
     ul {
       margin-left: 1.2rem;
     }
@@ -88,40 +99,43 @@
   <p class="intro">
     This project explores a combined mechanical and hardware-based system designed to
     reduce vaping through physical constraint and behavioral feedback rather than pure
-    restriction. The core idea is to place the vape inside a controlled enclosure that
-    interfaces with a mobile device to regulate usage over time.
+    restriction. The system is intended to regulate access and usage over time instead
+    of relying on complete denial.
   </p>
 
   <p class="intro">
-    The system is designed to mechanically limit access to the device while also using
-    hardware control to dynamically reduce intensity or fully disable the vape based on
-    usage patterns, similar in spirit to phone screen-time controls.
+    The core idea is to place the vape inside a controlled enclosure that interfaces with
+    a mobile device, allowing usage to be gradually reduced in a manner similar to phone
+    screen-time controls. The system is designed to mechanically limit access while also
+    enabling hardware-level control of the device.
   </p>
 
-  <img src="/images/vape/vape-case.jpg" alt="Vape lock case concept">
+  <!-- REFERENCE IMAGE -->
+  <img src="/images/vape/vape-case.jpg" alt="Vape device reference image">
   <div class="caption">
-    Concept reference image representing enclosure form factor and interaction model.
+    Reference image of a vape device shown for context only. The actual mechanical enclosure
+    and hardware system are under development and not shown.
   </div>
 
   <h2>System Concept</h2>
   <ul>
     <li>Mechanical enclosure to physically contain the vape device</li>
     <li>Embedded hardware to interface with the vape’s power or control circuitry</li>
-    <li>Phone-connected control logic to regulate usage over time</li>
+    <li>Phone-connected logic to regulate usage over time</li>
     <li>Ability to reduce output intensity or fully disable the device</li>
   </ul>
 
   <h2>Current Focus</h2>
   <ul>
     <li>Mechanical design and tolerancing for the enclosure</li>
-    <li>Exploring hardware interfaces that do not permanently modify the vape</li>
-    <li>Defining safe, reversible control mechanisms</li>
-    <li>Designing a user interaction model focused on gradual reduction</li>
+    <li>Exploring non-destructive hardware interfaces</li>
+    <li>Designing safe and reversible control mechanisms</li>
+    <li>Defining user interaction around gradual reduction</li>
   </ul>
 
   <p class="intro">
     This project is still in development, with current efforts focused on validating the
-    mechanical and hardware architecture before moving toward tighter software integration.
+    mechanical and hardware architecture before deeper software integration.
   </p>
 </div>
 

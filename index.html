@@ -8,7 +8,7 @@
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -33,44 +33,70 @@
       line-height: 1.65;
     }
 
-    /* FLOATING NAV */
-    nav {
+    /* FLOATING SPOTLIGHT HEADER */
+    .header-wrap {
       position: sticky;
-      top: 0;
+      top: 1.2rem;
       z-index: 100;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .header {
+      pointer-events: auto;
+      width: 100%;
+      max-width: 720px;
+      background: rgba(11, 11, 13, 0.75);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 0.9rem 1.2rem;
+      display: flex;
       align-items: center;
-      padding: 1.1rem 2rem;
-      background: rgba(11, 11, 13, 0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
+      justify-content: space-between;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
     }
 
-    nav a {
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      color: var(--muted);
       text-decoration: none;
-      color: var(--text);
-      margin-left: 1.2rem;
-      font-weight: 500;
     }
 
-    nav a:hover {
+    .logo:hover {
       color: var(--accent);
     }
 
-    .nav-left a {
-      font-weight: 600;
-      letter-spacing: 0.02em;
+    .name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
     }
 
-    .nav-right i {
-      font-size: 1.1rem;
+    .header-right a {
+      margin-left: 1rem;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .header-right a:hover {
+      color: var(--accent);
     }
 
     /* PAGE */
     .page {
       max-width: 720px;
-      margin: 5rem auto 6rem;
+      margin: 4.5rem auto 6rem;
       padding: 0 1.5rem;
     }
 
@@ -84,22 +110,23 @@
       max-width: 650px;
       height: 300px;
       object-fit: cover;
-      border-radius: 14px;
+      border-radius: 16px;
       border: 1px solid var(--border);
       background: var(--panel);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     h1 {
-      font-size: 2.3rem;
-      font-weight: 600;
-      margin: 0 0 1rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 0 0 1.5rem;
+      letter-spacing: -0.02em;
     }
 
     .intro {
       font-size: 1.05rem;
       color: #e5e7eb;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.4rem;
     }
 
     section {
@@ -130,7 +157,7 @@
       position: relative;
       background: var(--panel);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       text-decoration: none;
       color: var(--text);
@@ -166,12 +193,11 @@
       color: var(--muted);
     }
 
-    /* POP-OUT ICON */
     .external {
       position: absolute;
       top: 10px;
       right: 10px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--muted);
       background: rgba(2,6,23,0.8);
       padding: 6px;
@@ -199,23 +225,27 @@
   </style>
 </head>
 
-<body>
+<body id="top">
 
-<nav>
-  <div class="nav-left">
-    <a href="#top">AS</a>
+<!-- FLOATING HEADER -->
+<div class="header-wrap">
+  <div class="header">
+    <div class="header-left">
+      <a href="#top" class="logo">AS</a>
+      <div class="name">Aadi Shah</div>
+    </div>
+
+    <div class="header-right">
+      <a href="mailto:agshah@usc.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/aadigshah/" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
+    </div>
   </div>
+</div>
 
-  <div class="nav-right">
-    <a href="mailto:agshah@usc.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/aadigshah/" target="_blank" title="LinkedIn">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
-  </div>
-</nav>
-
-<main class="page" id="top">
+<main class="page">
 
   <!-- ABOUT -->
   <div class="hero">
@@ -224,15 +254,23 @@
     <h1>Aadi Shah</h1>
 
     <p class="intro">
-      I’m a mechanical engineering student at the University of Southern California with
-      a minor in business finance. I’m interested in building hardware systems that have
-      to work outside of clean, controlled environments.
+      Hi, I’m Aadi — a Mechanical Engineering student at USC focused on designing, building,
+      and testing real-world systems. I work hands-on with CAD-driven mechanical design,
+      prototyping, and hardware integration across rocket propulsion, autonomous vehicles,
+      and drivetrain-level mechanical systems. I’m also building a stealth drone startup,
+      where I design and test weather-resilient airframes and hardware for dense urban
+      environments.
     </p>
 
     <p class="intro">
-      I’m originally from Singapore, and growing up there shaped many of the problems I’m
-      drawn to—dense cities, heavy infrastructure demands, and systems that need to
-      function reliably despite environmental and operational constraints.
+      Alongside engineering, I’ve worked in strategy and investing roles at Bain Capital and
+      Ernst & Young, analyzing aerospace and industrial technologies and supporting
+      high-stakes technical and operational decisions.
+    </p>
+
+    <p class="intro">
+      Outside of work, I enjoy road biking, running, hiking, cooking, Formula 1, cricket,
+      and photography.
     </p>
   </div>
 
@@ -300,7 +338,7 @@
   </section>
 
   <footer>
-    Made with love by Aadi ❤️ — if you’re reading this, 
+    Made with love by Aadi ❤️ — if you’re reading this,
     <a href="mailto:agshah@usc.edu">let’s chat!</a>
   </footer>
 

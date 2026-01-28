@@ -2,52 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Chain Shield Cover – Aadi Shah</title>
+  <title>Chain Shield Cover | Aadi Shah</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: system-ui, sans-serif;
       margin: 0;
       color: #111;
+      background: #fff;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       padding: 1.2rem 2rem;
       border-bottom: 1px solid #e5e7eb;
     }
+
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
       color: #111;
       font-weight: 500;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .container {
-      max-width: 800px;
-      margin: 3rem auto;
+      max-width: 900px;
+      margin: 3rem auto 4rem;
       padding: 0 1.5rem;
+      line-height: 1.7;
+    }
+
+    h1 {
+      margin-bottom: 0.4rem;
+    }
+
+    .meta {
+      color: #6b7280;
+      margin-bottom: 2rem;
+    }
+
+    .intro {
+      max-width: 720px;
+      color: #444;
+      margin-bottom: 1.8rem;
+    }
+
+    img.project-img {
+      display: block;
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      margin: 1.5rem auto 0.4rem;
+      border-radius: 6px;
+      border: 1px solid #e5e7eb;
+      background: #fafafa;
+      padding: 0.4rem;
+    }
+
+    .caption {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 2.2rem;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
     }
   </style>
 </head>
+
 <body>
 
-  <nav>
-    <div><strong>AS</strong></div>
-    <div>
-      <a href="../index.html">Home</a>
-      <a href="../Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
-    </div>
-  </nav>
-
-  <div class="container">
-    <h1>Chain Shield Cover</h1>
-    <p><em>Team design exposure · Content coming soon</em></p>
+<nav>
+  <strong>AS</strong>
+  <div>
+    <a href="../index.html">Home</a>
+    <a href="../Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
   </div>
+</nav>
+
+<div class="container">
+  <h1>Chain Shield Cover</h1>
+  <div class="meta">USC Racing (SAE) · Mechanical Engineering Exposure</div>
+
+  <p class="intro">
+    As part of the USC Racing team, I participated in early design discussions and
+    integration reviews for a drivetrain chain shield. The goal was to protect rotating
+    components while maintaining proper chain clearance and ease of assembly.
+  </p>
+
+  <p class="intro">
+    My involvement focused on understanding real-world constraints—packaging, alignment,
+    manufacturability, and team integration—rather than owning the final part design.
+  </p>
+
+  <!-- IMAGE (TEAM CONTEXT) -->
+  <img
+    class="project-img"
+    src="../images/chain-shield/usc-racing.jpg"
+    alt="USC Racing vehicle">
+
+  <div class="caption">
+    USC Racing vehicle context showing drivetrain packaging and integration constraints.
+  </div>
+
+  <h2>Key Considerations</h2>
+  <ul>
+    <li>Chain clearance under dynamic motion</li>
+    <li>Mounting alignment and tolerance stack-up</li>
+    <li>Ease of assembly and serviceability</li>
+    <li>Safety and competition compliance</li>
+  </ul>
+</div>
 
 </body>
 </html>
-

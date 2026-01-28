@@ -5,12 +5,72 @@
   <title>Vape Lock Case | Aadi Shah</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; color: #111; }
-    nav { display: flex; justify-content: space-between; padding: 1.2rem 2rem; border-bottom: 1px solid #e5e7eb; }
-    nav a { margin-left: 1.5rem; text-decoration: none; color: #111; }
-    .container { max-width: 800px; margin: 3rem auto; padding: 0 1.5rem; line-height: 1.7; }
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      color: #111;
+      background: #fff;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 900px;
+      margin: 3rem auto 4rem;
+      padding: 0 1.5rem;
+      line-height: 1.7;
+    }
+    h1 {
+      margin-bottom: 0.4rem;
+    }
+    .meta {
+      color: #6b7280;
+      margin-bottom: 2rem;
+    }
+    .intro {
+      max-width: 720px;
+      color: #444;
+      margin-bottom: 1.6rem;
+    }
+    img {
+      display: block;
+      width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      margin: 2rem auto 0.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      background: #fafafa;
+      padding: 0.4rem;
+    }
+    .caption {
+      font-size: 0.9rem;
+      color: #555;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-left: 1.2rem;
+    }
   </style>
 </head>
+
 <body>
 
 <nav>
@@ -23,12 +83,45 @@
 
 <div class="container">
   <h1>Vape Lock Case</h1>
-  <p><em>Personal project · Work in progress</em></p>
+  <div class="meta">Personal Project · Mechanical + Hardware · Work in Progress</div>
 
-  <p>
-    A personal mechanical design project exploring a 3D printed enclosure intended to
-    restrict access to a vape device once placed inside. Focuses on iterative CAD design,
-    tolerancing, and manufacturability.
+  <p class="intro">
+    This project explores a combined mechanical and hardware-based system designed to
+    reduce vaping through physical constraint and behavioral feedback rather than pure
+    restriction. The core idea is to place the vape inside a controlled enclosure that
+    interfaces with a mobile device to regulate usage over time.
+  </p>
+
+  <p class="intro">
+    The system is designed to mechanically limit access to the device while also using
+    hardware control to dynamically reduce intensity or fully disable the vape based on
+    usage patterns, similar in spirit to phone screen-time controls.
+  </p>
+
+  <img src="/images/vape/vape-case.jpg" alt="Vape lock case concept">
+  <div class="caption">
+    Concept reference image representing enclosure form factor and interaction model.
+  </div>
+
+  <h2>System Concept</h2>
+  <ul>
+    <li>Mechanical enclosure to physically contain the vape device</li>
+    <li>Embedded hardware to interface with the vape’s power or control circuitry</li>
+    <li>Phone-connected control logic to regulate usage over time</li>
+    <li>Ability to reduce output intensity or fully disable the device</li>
+  </ul>
+
+  <h2>Current Focus</h2>
+  <ul>
+    <li>Mechanical design and tolerancing for the enclosure</li>
+    <li>Exploring hardware interfaces that do not permanently modify the vape</li>
+    <li>Defining safe, reversible control mechanisms</li>
+    <li>Designing a user interaction model focused on gradual reduction</li>
+  </ul>
+
+  <p class="intro">
+    This project is still in development, with current efforts focused on validating the
+    mechanical and hardware architecture before moving toward tighter software integration.
   </p>
 </div>
 

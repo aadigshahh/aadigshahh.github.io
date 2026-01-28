@@ -25,6 +25,10 @@
 
     * { box-sizing: border-box; }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
@@ -33,9 +37,7 @@
       line-height: 1.65;
     }
 
-    /* =========================
-       FLOATING SPOTLIGHT HEADER
-       ========================= */
+    /* FLOATING HEADER */
     .header-wrap {
       position: relative;
       z-index: 100;
@@ -54,13 +56,12 @@
       width: 100%;
       max-width: 720px;
       background: transparent;
-border: none;
       border-radius: 18px;
       padding: 0.9rem 1.2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: none; /* FIX 1: no floating look at load */
+      box-shadow: none;
       transition:
         box-shadow 0.25s ease,
         padding 0.25s ease,
@@ -72,11 +73,6 @@ border: none;
       backdrop-filter: blur(14px);
       box-shadow: 0 28px 70px rgba(0,0,0,0.55);
       padding: 0.65rem 1.2rem;
-    }
-
-    .header.scrolled .name {
-      font-size: 1.15rem;
-      letter-spacing: -0.015em;
     }
 
     .header-left {
@@ -102,7 +98,14 @@ border: none;
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1;
-      transition: font-size 0.25s ease, letter-spacing 0.25s ease; /* FIX 2 */
+      color: var(--text);
+      text-decoration: none;
+      transition: font-size 0.25s ease, letter-spacing 0.25s ease;
+    }
+
+    .header.scrolled .name {
+      font-size: 1.15rem;
+      letter-spacing: -0.015em;
     }
 
     .header-right a {
@@ -119,13 +122,13 @@ border: none;
     /* PAGE */
     .page {
       max-width: 720px;
-      margin: 2rem auto 6rem;
+      margin: 2rem auto 7rem;
       padding: 0 1.5rem;
     }
 
     /* HERO */
     .hero {
-      margin-bottom: 5rem;
+      margin-bottom: 5.5rem;
     }
 
     .hero img {
@@ -159,7 +162,14 @@ border: none;
     h2 {
       font-size: 1.35rem;
       font-weight: 600;
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .projects-intro {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin-bottom: 2rem;
     }
 
     /* PROJECTS GRID */
@@ -198,14 +208,14 @@ border: none;
       box-shadow: 0 0 0 1px var(--accent);
     }
 
-   .card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  background: #020617;
-  padding: 0;
-  border-bottom: 1px solid var(--border);
-}
+    .card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+      filter: brightness(0.9) contrast(1.05);
+    }
 
     .card-content {
       padding: 1.2rem;
@@ -239,13 +249,13 @@ border: none;
       transform: translateY(-2px) translateX(2px);
     }
 
-   footer {
-  margin-top: 5rem;
-  font-size: 0.9rem;
-  color: var(--muted);
-  opacity: 0.85;
-  text-align: center;
-}
+    footer {
+      margin-top: 6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      opacity: 0.85;
+      text-align: center;
+    }
 
     footer a {
       color: var(--accent);
@@ -265,7 +275,7 @@ border: none;
   <div class="header">
     <div class="header-left">
       <a href="#top" class="logo">AS</a>
-      <div class="name">Aadi Shah</div>
+      <a href="#top" class="name">Aadi Shah</a>
     </div>
 
     <div class="header-right">
@@ -308,9 +318,14 @@ border: none;
   <!-- PROJECTS -->
   <section>
     <h2>Projects</h2>
+    <p class="projects-intro">
+      A selection of hardware, mechanical, and systems projects spanning startups,
+      coursework, and team-based engineering.
+    </p>
 
     <div class="projects">
 
+      <!-- 1 -->
       <a class="card" href="projects/weather-drone.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/home/drone.jpg" alt="Weather drone">
@@ -320,33 +335,7 @@ border: none;
         </div>
       </a>
 
-      <a class="card" href="projects/vape-case.html">
-        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
-        <img src="/images/vape/vape-case.jpg" alt="Vape lock case">
-        <div class="card-content">
-          <div class="card-title">Vape Lock Case</div>
-          <div class="card-meta">Mechanical + hardware system</div>
-        </div>
-      </a>
-
-      <a class="card" href="projects/autonomous-vehicle.html">
-        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
-        <img src="/images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD">
-        <div class="card-content">
-          <div class="card-title">Autonomous Vehicle Design</div>
-          <div class="card-meta">Torque-driven vehicle system</div>
-        </div>
-      </a>
-
-      <a class="card" href="projects/chain-shield.html">
-        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
-        <img src="/images/chain-shield/usc-racing.jpg" alt="USC Racing chain shield">
-        <div class="card-content">
-          <div class="card-title">USC Racing – Chain Shield</div>
-          <div class="card-meta">Drivetrain component design</div>
-        </div>
-      </a>
-
+      <!-- 2 -->
       <a class="card" href="projects/cardinal-sb.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/cardinal-sb/cardinalsb.png" alt="Cardinal SB aircraft">
@@ -356,12 +345,43 @@ border: none;
         </div>
       </a>
 
+      <!-- 3 -->
+      <a class="card" href="projects/autonomous-vehicle.html">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD">
+        <div class="card-content">
+          <div class="card-title">Autonomous Vehicle Design</div>
+          <div class="card-meta">Torque-optimized autonomous vehicle</div>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a class="card" href="projects/chain-shield.html">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/chain-shield/usc-racing.jpg" alt="USC Racing chain shield">
+        <div class="card-content">
+          <div class="card-title">USC Racing – Chain Shield</div>
+          <div class="card-meta">Drivetrain component design</div>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a class="card" href="projects/vape-case.html">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/vape/vape-case.jpg" alt="Vape lock case">
+        <div class="card-content">
+          <div class="card-title">Vape Lock Case</div>
+          <div class="card-meta">Mechanical behavior-change device</div>
+        </div>
+      </a>
+
+      <!-- 6 -->
       <a class="card" href="projects/cad-projects.html">
         <i class="fa-solid fa-arrow-up-right-from-square external"></i>
         <img src="/images/cad/cad-part-exploded.png" alt="CAD projects">
         <div class="card-content">
           <div class="card-title">CAD Projects</div>
-          <div class="card-meta">Coursework & self-directed</div>
+          <div class="card-meta">Parametric CAD & manufacturability</div>
         </div>
       </a>
 
@@ -369,8 +389,7 @@ border: none;
   </section>
 
   <footer>
-    Made with ❤️ by Aadi — if you’re reading this,
-    <a href="mailto:agshah@usc.edu">let’s chat</a>
+    © Aadi Shah · <a href="mailto:agshah@usc.edu">agshah@usc.edu</a>
   </footer>
 
 </main>

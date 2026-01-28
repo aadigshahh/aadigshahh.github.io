@@ -33,10 +33,12 @@
       line-height: 1.65;
     }
 
-    /* ===== Floating Header ===== */
+    /* =========================
+       FLOATING SPOTLIGHT HEADER
+       ========================= */
     .header-wrap {
       position: sticky;
-      top: 1rem;
+      top: 1.2rem;
       z-index: 100;
       display: flex;
       justify-content: center;
@@ -47,19 +49,20 @@
       pointer-events: auto;
       width: 100%;
       max-width: 720px;
-      background: rgba(11,11,13,0.8);
+      background: rgba(11, 11, 13, 0.75);
       backdrop-filter: blur(14px);
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 1rem 1.4rem;
+      padding: 0.9rem 1.2rem;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      transition: all 0.3s ease;
+      justify-content: space-between;
+      box-shadow: 0 18px 36px rgba(0,0,0,0.35);
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
     }
 
-    .header.compact {
-      padding: 0.6rem 1.2rem;
+    .header.scrolled {
+      box-shadow: 0 28px 70px rgba(0,0,0,0.55);
     }
 
     .header-left {
@@ -70,45 +73,67 @@
 
     .logo {
       font-weight: 700;
-      letter-spacing: 0.1em;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.9rem;
+    }
+
+    .logo:hover {
+      color: var(--accent);
     }
 
     .name {
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      transition: font-size 0.3s ease;
-    }
-
-    .header.compact .name {
-      font-size: 1.05rem;
+      letter-spacing: -0.02em;
     }
 
     .header-right a {
       margin-left: 1rem;
       color: var(--text);
       text-decoration: none;
+      font-size: 1.05rem;
     }
 
-    /* ===== Page ===== */
+    .header-right a:hover {
+      color: var(--accent);
+    }
+
+    /* PAGE */
     .page {
       max-width: 720px;
       margin: 4.5rem auto 6rem;
       padding: 0 1.5rem;
     }
 
+    /* HERO */
+    .hero {
+      margin-bottom: 5rem;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 650px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      margin-bottom: 2rem;
+    }
+
     h1 {
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin: 0 0 1.5rem;
+      letter-spacing: -0.035em;
     }
 
     .intro {
+      font-size: 1.05rem;
       color: #d1d5db;
       margin-bottom: 1.4rem;
-      font-size: 1.05rem;
     }
 
     section {
@@ -116,11 +141,12 @@
     }
 
     h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
     }
 
-    /* ===== Projects ===== */
+    /* PROJECTS GRID */
     .projects {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -129,36 +155,50 @@
     }
 
     @media (max-width: 700px) {
-      .projects { grid-template-columns: 1fr; }
+      .projects {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
+      position: relative;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.035),
+          rgba(255,255,255,0)
+        ),
+        var(--panel);
+      border: 1px solid var(--border);
       border-radius: 14px;
       overflow: hidden;
-      border: 1px solid var(--border);
       text-decoration: none;
       color: var(--text);
-      background: var(--panel);
-      transition: transform 0.2s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
     .card:hover {
       transform: translateY(-4px);
+      box-shadow: 0 0 0 1px var(--accent);
     }
 
     .card img {
       width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
+      height: 140px;
+      object-fit: contain;
+      background: #020617;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border);
     }
 
     .card-content {
-      padding: 1rem 1.2rem;
+      padding: 1.2rem;
     }
 
     .card-title {
+      font-size: 1.05rem;
       font-weight: 600;
+      margin-bottom: 0.3rem;
     }
 
     .card-meta {
@@ -166,52 +206,56 @@
       color: var(--muted);
     }
 
-    /* ===== Work ===== */
-    .work-item {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 1.6rem;
-      align-items: center;
-    }
-
-    .work-item img {
-      width: 42px;
-      height: 42px;
-      border-radius: 8px;
-      background: #111;
-    }
-
-    .work-meta {
+    .external {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.8rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      background: rgba(2,6,23,0.8);
+      padding: 6px;
+      border-radius: 6px;
+      transition: transform 0.15s ease, color 0.15s ease;
     }
 
-    /* ===== Footer ===== */
+    .card:hover .external {
+      color: var(--accent);
+      transform: translateY(-2px) translateX(2px);
+    }
+
     footer {
-      margin-top: 6rem;
-      text-align: center;
-      color: var(--muted);
+      margin-top: 5rem;
       font-size: 0.9rem;
+      color: var(--muted);
+      opacity: 0.85;
     }
 
     footer a {
       color: var(--accent);
       text-decoration: none;
     }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body id="top">
 
+<!-- FLOATING HEADER -->
 <div class="header-wrap">
-  <div class="header" id="header">
+  <div class="header">
     <div class="header-left">
       <a href="#top" class="logo">AS</a>
       <div class="name">Aadi Shah</div>
     </div>
+
     <div class="header-right">
-      <a href="mailto:agshah@usc.edu"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/aadigshah/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:agshah@usc.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/aadigshah/" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
       <a href="Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
     </div>
   </div>
@@ -219,35 +263,60 @@
 
 <main class="page">
 
-  <h1>Mechanical Engineering · Hardware Systems</h1>
+  <!-- ABOUT -->
+  <div class="hero">
+    <img src="/images/home/me.jpeg" alt="Photo of Aadi Shah">
 
-  <p class="intro">
-    Hi, I’m Aadi — a Mechanical Engineering student at USC focused on designing, building, and testing real-world systems.
-    I work hands-on with CAD-driven mechanical design, prototyping, and hardware integration across rocket propulsion,
-    autonomous vehicles, and drivetrain-level mechanical systems. I’m also building a stealth drone startup, where I design
-    and test weather-resilient airframes and hardware for dense urban environments.
-  </p>
+    <h1>Aadi Shah</h1>
 
-  <p class="intro">
-    Alongside engineering, I’ve worked in strategy and investing roles at Bain Capital and Ernst & Young, analyzing aerospace
-    and industrial technologies and supporting high-stakes technical and operational decisions.
-  </p>
+    <p class="intro">
+      Hi, I’m Aadi — a Mechanical Engineering student at USC focused on designing, building,
+      and testing real-world systems. I work hands-on with CAD-driven mechanical design,
+      prototyping, and hardware integration across rocket propulsion, autonomous vehicles,
+      and drivetrain-level mechanical systems. I’m also building a stealth drone startup,
+      where I design and test weather-resilient airframes and hardware for dense urban
+      environments.
+    </p>
 
-  <!-- Projects -->
+    <p class="intro">
+      Alongside engineering, I’ve worked in strategy and investing roles at Bain Capital and
+      Ernst & Young, analyzing aerospace and industrial technologies and supporting
+      high-stakes technical and operational decisions.
+    </p>
+
+    <p class="intro">
+      Outside of work, I enjoy road biking, running, hiking, cooking, Formula 1, cricket,
+      and photography.
+    </p>
+  </div>
+
+  <!-- PROJECTS -->
   <section>
-    <h2>Some Stuff I’ve Built</h2>
+    <h2>Projects</h2>
 
     <div class="projects">
+
       <a class="card" href="projects/weather-drone.html">
-        <img src="/images/home/drone.jpg">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/home/drone.jpg" alt="Weather drone">
         <div class="card-content">
           <div class="card-title">Traffic Monitoring Weather Drone</div>
           <div class="card-meta">Hardware startup · In progress</div>
         </div>
       </a>
 
+      <a class="card" href="projects/vape-case.html">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/vape/vape-case.jpg" alt="Vape lock case">
+        <div class="card-content">
+          <div class="card-title">Vape Lock Case</div>
+          <div class="card-meta">Mechanical + hardware system</div>
+        </div>
+      </a>
+
       <a class="card" href="projects/autonomous-vehicle.html">
-        <img src="/images/autonomous-vehicle/cad-car.png">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD">
         <div class="card-content">
           <div class="card-title">Autonomous Vehicle Design</div>
           <div class="card-meta">Torque-driven vehicle system</div>
@@ -255,64 +324,46 @@
       </a>
 
       <a class="card" href="projects/chain-shield.html">
-        <img src="/images/chain-shield/usc-racing.jpg">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/chain-shield/usc-racing.jpg" alt="USC Racing chain shield">
         <div class="card-content">
           <div class="card-title">USC Racing – Chain Shield</div>
-          <div class="card-meta">Drivetrain component</div>
+          <div class="card-meta">Drivetrain component design</div>
         </div>
       </a>
 
       <a class="card" href="projects/cardinal-sb.html">
-        <img src="/images/cardinal-sb/cardinalsb.png">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/cardinal-sb/cardinalsb.png" alt="Cardinal SB aircraft">
         <div class="card-content">
           <div class="card-title">Cardinal SB – Aircraft Design</div>
           <div class="card-meta">Conceptual aircraft design</div>
         </div>
       </a>
+
+      <a class="card" href="projects/cad-projects.html">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/cad/cad-part-exploded.png" alt="CAD projects">
+        <div class="card-content">
+          <div class="card-title">CAD Projects</div>
+          <div class="card-meta">Coursework & self-directed</div>
+        </div>
+      </a>
+
     </div>
-  </section>
-
-  <!-- Work -->
-  <section>
-    <h2>Work</h2>
-
-    <div class="work-item">
-      <img src="/images/logos/bain.png">
-      <div>
-        <strong>Bain Capital</strong> — Technical Analyst Intern  
-        <div class="work-meta">Summer 2024</div>
-      </div>
-    </div>
-
-    <div class="work-item">
-      <img src="/images/logos/ey.png">
-      <div>
-        <strong>Ernst & Young</strong> — Business & Technology Consulting Intern  
-        <div class="work-meta">Summer 2025</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Ventures -->
-  <section>
-    <h2>Business & Ventures</h2>
-    <p class="intro">
-      Small-scale road bike flipping business involving sourcing, mechanical refurbishment,
-      pricing, and resale. Focused on operational efficiency, margin discipline, and hands-on
-      mechanical work.
-    </p>
   </section>
 
   <footer>
-    Made with care by Aadi ❤️ — <a href="mailto:agshah@usc.edu">let’s chat</a>
+    Made with care by Aadi ❤️ — if you’re reading this,
+    <a href="mailto:agshah@usc.edu">let’s chat</a>
   </footer>
 
 </main>
 
 <script>
-  const header = document.getElementById('header');
+  const header = document.querySelector('.header');
   window.addEventListener('scroll', () => {
-    header.classList.toggle('compact', window.scrollY > 30);
+    header.classList.toggle('scrolled', window.scrollY > 20);
   });
 </script>
 

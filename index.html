@@ -33,12 +33,17 @@
       line-height: 1.65;
     }
 
-    /* NAV */
+    /* FLOATING NAV */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 2rem;
+      padding: 1.1rem 2rem;
+      background: rgba(11, 11, 13, 0.85);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
 
@@ -51,6 +56,11 @@
 
     nav a:hover {
       color: var(--accent);
+    }
+
+    .nav-left a {
+      font-weight: 600;
+      letter-spacing: 0.02em;
     }
 
     .nav-right i {
@@ -70,7 +80,8 @@
     }
 
     .hero img {
-      width: 650px;
+      width: 100%;
+      max-width: 650px;
       height: 300px;
       object-fit: cover;
       border-radius: 14px;
@@ -101,19 +112,6 @@
       margin-bottom: 1.2rem;
     }
 
-    p {
-      color: #e5e7eb;
-      margin-bottom: 1.2rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.4rem;
-    }
-
     /* PROJECTS GRID */
     .projects {
       display: grid;
@@ -129,6 +127,7 @@
     }
 
     .card {
+      position: relative;
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 12px;
@@ -167,10 +166,35 @@
       color: var(--muted);
     }
 
+    /* POP-OUT ICON */
+    .external {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: rgba(2,6,23,0.8);
+      padding: 6px;
+      border-radius: 6px;
+    }
+
+    .card:hover .external {
+      color: var(--accent);
+    }
+
     footer {
       margin-top: 5rem;
       font-size: 0.9rem;
       color: var(--muted);
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -178,7 +202,9 @@
 <body>
 
 <nav>
-  <strong>AS</strong>
+  <div class="nav-left">
+    <a href="#top">AS</a>
+  </div>
 
   <div class="nav-right">
     <a href="mailto:agshah@usc.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -189,7 +215,7 @@
   </div>
 </nav>
 
-<main class="page">
+<main class="page" id="top">
 
   <!-- ABOUT -->
   <div class="hero">
@@ -217,7 +243,8 @@
     <div class="projects">
 
       <a class="card" href="projects/weather-drone.html">
-        <img src="/images/home/drone.jpg">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/home/drone.jpg" alt="Weather drone">
         <div class="card-content">
           <div class="card-title">Traffic Monitoring Weather Drone</div>
           <div class="card-meta">Hardware startup · In progress</div>
@@ -225,7 +252,8 @@
       </a>
 
       <a class="card" href="projects/vape-case.html">
-        <img src="/images/vape/vape-case.jpg">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/vape/vape-case.jpg" alt="Vape lock case">
         <div class="card-content">
           <div class="card-title">Vape Lock Case</div>
           <div class="card-meta">Mechanical + hardware system</div>
@@ -233,7 +261,8 @@
       </a>
 
       <a class="card" href="projects/autonomous-vehicle.html">
-        <img src="/images/autonomous-vehicle/cad-car.png">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD">
         <div class="card-content">
           <div class="card-title">Autonomous Vehicle Design</div>
           <div class="card-meta">Torque-driven vehicle system</div>
@@ -241,7 +270,8 @@
       </a>
 
       <a class="card" href="projects/chain-shield.html">
-        <img src="/images/chain-shield/usc-racing.jpg">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/chain-shield/usc-racing.jpg" alt="USC Racing chain shield">
         <div class="card-content">
           <div class="card-title">USC Racing – Chain Shield</div>
           <div class="card-meta">Drivetrain component design</div>
@@ -249,7 +279,8 @@
       </a>
 
       <a class="card" href="projects/cardinal-sb.html">
-        <img src="/images/cardinal-sb/cardinalsb.png">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/cardinal-sb/cardinalsb.png" alt="Cardinal SB aircraft">
         <div class="card-content">
           <div class="card-title">Cardinal SB – Aircraft Design</div>
           <div class="card-meta">Conceptual aircraft design</div>
@@ -257,7 +288,8 @@
       </a>
 
       <a class="card" href="projects/cad-projects.html">
-        <img src="/images/cad/cad-part-exploded.png">
+        <i class="fa-solid fa-arrow-up-right-from-square external"></i>
+        <img src="/images/cad/cad-part-exploded.png" alt="CAD projects">
         <div class="card-content">
           <div class="card-title">CAD Projects</div>
           <div class="card-meta">Coursework & self-directed</div>
@@ -268,7 +300,8 @@
   </section>
 
   <footer>
-    Click on individual projects for more details!
+    Made with love by Aadi ❤️ — if you’re reading this, 
+    <a href="mailto:agshah@usc.edu">let’s chat!</a>
   </footer>
 
 </main>

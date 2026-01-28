@@ -6,68 +6,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    /* ===== COLORS ===== */
+    :root {
+      --bg: #0b0b0d;
+      --text: #f5f5f7;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --border: #1f2933;
+      --panel: #020617;
+    }
+
     body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  color: #f5f5f7;
-  background: #0b0b0d;
-}
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+    }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.2rem 2rem;
-  border-bottom: 1px solid #1f2933;
-}
+    /* ===== NAV ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-nav a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: #f5f5f7;
-  font-weight: 500;
-}
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
 
-nav a:hover {
-  color: #38bdf8;
-}
+    nav a:hover {
+      color: var(--accent);
+    }
 
-/* LAYOUT */
-.container {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
-  line-height: 1.7;
-}
+    /* ===== PAGE WRAPPER ===== */
+    .container {
+      max-width: 860px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+      line-height: 1.65;
+    }
 
-/* HERO */
-.hero img {
-  width: 500px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid #e5e7eb;
-  background: #fafafa;
-}
+    /* ===== HERO ===== */
+    .hero {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+      margin-bottom: 4rem;
+    }
 
-/* TEXT */
-h1, h2 {
-  color: #f5f5f7;
-}
+    .hero img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+    }
 
-p, li {
-  color: #e5e7eb;
-}
+    .hero-text {
+      max-width: 520px;
+    }
 
-.footer-note {
-  color: #9ca3af;
-}
+    h1 {
+      font-size: 2.4rem;
+      margin: 0 0 1rem;
+    }
 
-/* LINKS */
-a {
-  color: #38bdf8;
-}
+    .intro {
+      font-size: 1.05rem;
+      color: #e5e7eb;
+      margin-bottom: 1rem;
+    }
 
+    /* ===== SECTIONS ===== */
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 680px;
+      color: #e5e7eb;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+      max-width: 680px;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+      color: #e5e7eb;
+    }
+
+    .footer-note {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+
+      .hero img {
+        width: 140px;
+        height: 140px;
+      }
+    }
   </style>
 </head>
 
@@ -83,35 +138,33 @@ a {
 
 <div class="container">
 
-  <!-- HERO / ABOUT ME -->
+  <!-- ===== HERO ===== -->
   <div class="hero">
+    <img src="/images/home/me.jpeg" alt="Photo of Aadi Shah">
 
-  <img src="/images/home/me.jpeg" alt="Me!">
-
-    <div>
+    <div class="hero-text">
       <h1>Aadi Shah</h1>
 
       <p class="intro">
         I’m a mechanical engineering student at the University of Southern California
-        with a minor in business finance. I’m interested in building real hardware systems
-        that have to work outside of controlled environments and under real operational
-        constraints.
+        with a minor in business finance. I like building hardware systems that have to
+        work outside of clean, controlled environments.
       </p>
 
       <p class="intro">
-        I’m originally from Singapore, and growing up there has shaped many of the
-        problems I’m interested in—dense cities, high infrastructure demands, and systems
-        that need to function reliably despite environmental and logistical challenges.
+        I’m originally from Singapore, and growing up there shaped many of the problems
+        I’m interested in—dense cities, heavy infrastructure demands, and systems that
+        need to function reliably despite environmental and operational constraints.
       </p>
     </div>
   </div>
 
-  <!-- WHAT I WORK ON -->
+  <!-- ===== WHAT I WORK ON ===== -->
   <h2>What I Work On</h2>
 
   <p>
     Most of my work revolves around hands-on mechanical design and hardware system
-    integration. I enjoy projects where hardware decisions meaningfully affect
+    integration. I’m drawn to projects where hardware decisions directly impact
     performance, reliability, and user behavior.
   </p>
 
@@ -122,7 +175,7 @@ a {
     <li>Designing for deployment, maintenance, and failure modes</li>
   </ul>
 
-  <!-- CURRENT PROJECTS -->
+  <!-- ===== CURRENTLY ===== -->
   <h2>What I’m Currently Building</h2>
 
   <p>
@@ -138,20 +191,20 @@ a {
     design to drivetrain and autonomous vehicle work.
   </p>
 
-  <!-- INTERESTS -->
+  <!-- ===== INTERESTS ===== -->
   <h2>Outside of Work</h2>
 
   <p>
     Outside of engineering, I spend a lot of time around vehicles and outdoors. I’m a
-    big car and aviation enthusiast, and I enjoy understanding how complex mechanical
-    systems behave under real operating conditions.
+    big car and aviation guy, enjoy road biking and the gym, and like getting outside
+    to hike when I can. I also love cooking in my free time.
   </p>
 
   <ul>
-    <li>Road biking and staying active at the gym</li>
+    <li>Road biking and training at the gym</li>
     <li>Cars, planes, and Formula 1</li>
-    <li>Hiking and spending time outdoors</li>
-    <li>Cooking and experimenting with food in my free time</li>
+    <li>Hiking and being outdoors</li>
+    <li>Cooking and experimenting with food</li>
   </ul>
 
   <p class="footer-note">

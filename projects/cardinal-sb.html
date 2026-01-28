@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Cardinal SB Aircraft Design | Aadi Shah</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <style>
     body {
       font-family: system-ui, sans-serif;
@@ -11,43 +12,73 @@
       color: #111;
       background: #fff;
     }
+
     nav {
       display: flex;
       justify-content: space-between;
       padding: 1.2rem 2rem;
       border-bottom: 1px solid #e5e7eb;
     }
+
     nav a {
       margin-left: 1.5rem;
       text-decoration: none;
       color: #111;
       font-weight: 500;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     .container {
       max-width: 900px;
       margin: 3rem auto 4rem;
       padding: 0 1.5rem;
       line-height: 1.7;
     }
-    img {
+
+    h1 {
+      margin-bottom: 0.4rem;
+    }
+
+    .meta {
+      color: #6b7280;
+      margin-bottom: 2rem;
+    }
+
+    .intro {
+      max-width: 760px;
+      color: #444;
+      margin-bottom: 1.6rem;
+    }
+
+    img.project-img {
+      display: block;
       width: 100%;
       max-height: 260px;
       object-fit: contain;
-      display: block;
       margin: 2rem auto 0.5rem;
       border: 1px solid #e5e7eb;
       border-radius: 6px;
       background: #fafafa;
       padding: 0.4rem;
     }
+
     .caption {
       font-size: 0.9rem;
       color: #555;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    h2 {
+      margin-top: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
     }
   </style>
 </head>
@@ -64,30 +95,32 @@
 
 <div class="container">
   <h1>Cardinal SB – Aircraft Design</h1>
-  <p><em>AME 261 · Conceptual Aircraft Design · Spring 2025</em></p>
+  <div class="meta">AME 261 · Conceptual Aircraft Design · Spring 2025</div>
 
-  <p>
-    Cardinal SB was a team-based conceptual aircraft design project focused on a
-    long-range, large-cabin business jet capable of operating from shorter runways
-    while maintaining high-subsonic cruise performance. The project emphasized
-    realistic constraints, trade studies, and system-level decision making rather
-    than purely theoretical analysis.
+  <p class="intro">
+    Cardinal SB was a team-based conceptual aircraft design project focused on a long-range,
+    large-cabin business jet capable of operating from shorter runways while maintaining
+    high-subsonic cruise performance. The project emphasized realistic constraints,
+    trade studies, and system-level decision making rather than purely theoretical analysis.
   </p>
 
-  <p>
-    I was involved throughout the design process, contributing to configuration
-    decisions, performance analysis, propulsion trade studies, and technical
-    documentation as part of a multi-member design team.
+  <p class="intro">
+    I was involved throughout the design process, contributing to configuration decisions,
+    performance analysis, propulsion trade studies, and technical documentation as part of
+    a multi-member design team.
   </p>
 
-  <!-- IMAGE -->
-  <img src="../images/cardinal-sb/cardinal-3view.png" alt="Cardinal SB aircraft three-view">
+  <!-- 3-VIEW IMAGE (ABSOLUTE PATH) -->
+  <img
+    class="project-img"
+    src="/images/cardinal-sb/cardinal-3view.png"
+    alt="Cardinal SB aircraft three-view">
+
   <div class="caption">
     Conceptual three-view of the Cardinal SB aircraft developed as part of AME 261.
   </div>
 
   <h2>Technical Focus Areas</h2>
-
   <ul>
     <li>Aircraft configuration and layout trade studies</li>
     <li>Wing and tail sizing using stability and performance constraints</li>
@@ -98,14 +131,14 @@
 
   <h2>Full Technical Report</h2>
 
-  <p>
-    This document contains the complete technical report for the Cardinal SB aircraft
-    design project, including configuration trade studies, performance analysis,
-    sizing calculations, and supporting figures developed as part of AME 261.
+  <p class="intro">
+    This document contains the complete technical report for the Cardinal SB aircraft design
+    project, including configuration trade studies, performance analysis, sizing
+    calculations, and supporting figures developed as part of AME 261.
   </p>
 
-  <p>
-    <a href="../AME 261 Report.pdf" target="_blank">
+  <p class="intro">
+    <a href="/AME 261 Report.pdf" target="_blank">
       View full technical report (PDF)
     </a>
   </p>

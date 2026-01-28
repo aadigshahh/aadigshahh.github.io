@@ -7,27 +7,21 @@
 
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: system-ui, sans-serif;
       margin: 0;
       color: #111;
+      background: #fff;
     }
 
-    /* NAV */
     nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       padding: 1.2rem 2rem;
       border-bottom: 1px solid #e5e7eb;
     }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
     nav a {
+      margin-left: 1.5rem;
       text-decoration: none;
       color: #111;
       font-weight: 500;
@@ -37,100 +31,155 @@
       text-decoration: underline;
     }
 
-    /* DROPDOWN */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropbtn {
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 1.5rem;
-      right: 0;
-      background: white;
-      min-width: 260px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-      z-index: 10;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.7rem 1rem;
-      font-size: 0.95rem;
-      color: #111;
-      text-decoration: none;
-    }
-
-    .dropdown-content a:hover {
-      background: #f3f4f6;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* MAIN */
     .container {
-      max-width: 800px;
-      margin: 4rem auto;
+      max-width: 900px;
+      margin: 4rem auto 4rem;
       padding: 0 1.5rem;
+      line-height: 1.7;
+    }
+
+    .hero {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+      margin-bottom: 3.5rem;
+    }
+
+    .hero img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      background: #fafafa;
     }
 
     h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
     }
 
-    p {
+    .intro {
+      max-width: 560px;
       color: #444;
-      line-height: 1.6;
-      max-width: 600px;
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+    }
+
+    .footer-note {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero img {
+        width: 180px;
+        height: 180px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV BAR -->
-  <nav>
-    <div><strong>AS</strong></div>
-
-    <div class="nav-right">
-      <div class="dropdown">
-        <span class="dropbtn">Projects ▾</span>
-        <div class="dropdown-content">
-          <a href="projects/chain-shield.html">Chain Shield Cover</a>
-          <a href="projects/cad-projects.html">CAD Projects (Learning & Class)</a>
-          <a href="projects/vape-case.html">Vape Lock Case</a>
-          <a href="projects/cardinal-sb.html">Cardinal SB – Aircraft Design</a>
-          <a href="projects/weather-drone.html">Traffic Monitoring Weather Drone</a>
-          <a href="projects/autonomous-vehicle.html">Autonomous Vehicle Design</a>
-        </div>
-      </div>
-
-      <a href="Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
-    </div>
-  </nav>
-
-  <!-- HOME CONTENT -->
-  <div class="container">
-    <h1>Aadi Shah</h1>
-
-    <p>
-      Engineering student interested in aircraft design, CAD, and mechanical systems.
-      Currently focused on learning through coursework, team exposure, and self-directed projects.
-    </p>
-
-    <p>
-      <a href="mailto:agshah@usc.edu">agshah@usc.edu</a>
-    </p>
+<nav>
+  <strong>AS</strong>
+  <div>
+    <a href="projects.html">Projects</a>
+    <a href="Aadi_Shah_Resume.pdf" target="_blank">Resume</a>
   </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO / ABOUT ME -->
+  <div class="hero">
+    <img src="/images/home/me.jpg" alt="Photo of Aadi Shah">
+
+    <div>
+      <h1>Aadi Shah</h1>
+
+      <p class="intro">
+        I’m a mechanical engineering student at the University of Southern California
+        with a minor in business finance. I’m interested in building real hardware systems
+        that have to work outside of controlled environments and under real operational
+        constraints.
+      </p>
+
+      <p class="intro">
+        I’m originally from Singapore, and growing up there has shaped many of the
+        problems I’m interested in—dense cities, high infrastructure demands, and systems
+        that need to function reliably despite environmental and logistical challenges.
+      </p>
+    </div>
+  </div>
+
+  <!-- WHAT I WORK ON -->
+  <h2>What I Work On</h2>
+
+  <p>
+    Most of my work revolves around hands-on mechanical design and hardware system
+    integration. I enjoy projects where hardware decisions meaningfully affect
+    performance, reliability, and user behavior.
+  </p>
+
+  <ul>
+    <li>Mechanical design and CAD (SolidWorks, Siemens NX)</li>
+    <li>Hardware-focused system integration</li>
+    <li>Rapid prototyping and 3D printing</li>
+    <li>Designing for deployment, maintenance, and failure modes</li>
+  </ul>
+
+  <!-- CURRENT PROJECTS -->
+  <h2>What I’m Currently Building</h2>
+
+  <p>
+    I’m currently working on a hardware startup project focused on 3D-printed,
+    weather-capable drones for traffic monitoring in India. The goal is to build
+    platforms that can operate reliably during monsoon seasons, where rain, wind,
+    humidity, and poor visibility cause most off-the-shelf systems to fail.
+  </p>
+
+  <p>
+    Alongside this, I stay involved in aircraft, vehicle, and propulsion-related
+    projects to continue building system-level intuition—from conceptual aircraft
+    design to drivetrain and autonomous vehicle work.
+  </p>
+
+  <!-- INTERESTS -->
+  <h2>Outside of Work</h2>
+
+  <p>
+    Outside of engineering, I spend a lot of time around vehicles and outdoors. I’m a
+    big car and aviation enthusiast, and I enjoy understanding how complex mechanical
+    systems behave under real operating conditions.
+  </p>
+
+  <ul>
+    <li>Road biking and staying active at the gym</li>
+    <li>Cars, planes, and Formula 1</li>
+    <li>Hiking and spending time outdoors</li>
+    <li>Cooking and experimenting with food in my free time</li>
+  </ul>
+
+  <p class="footer-note">
+    Detailed project write-ups and technical work can be found in the Projects section.
+  </p>
+
+</div>
 
 </body>
 </html>

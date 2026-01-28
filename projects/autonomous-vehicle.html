@@ -44,26 +44,21 @@
 
     .meta {
       color: #6b7280;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2rem;
     }
 
     .intro {
       max-width: 720px;
       color: #444;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.8rem;
     }
 
-    h2 {
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    img {
+    img.project-img {
+      display: block;
       width: 100%;
       max-height: 220px;
       object-fit: contain;
-      display: block;
-      margin: 1.5rem auto 0.5rem;
+      margin: 1.5rem auto 0.4rem;
       border-radius: 6px;
       border: 1px solid #e5e7eb;
       background: #fafafa;
@@ -73,7 +68,13 @@
     .caption {
       font-size: 0.9rem;
       color: #555;
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
     }
 
     ul {
@@ -99,29 +100,33 @@
   <p class="intro">
     This project involved designing and building a small autonomous vehicle for a
     hill-climbing challenge where performance depended on torque, traction, and mechanical
-    reliability rather than advanced autonomy. The vehicle was tested repeatedly under
-    dynamic loading and competitive conditions.
+    reliability rather than advanced autonomy.
   </p>
 
   <p class="intro">
-    My focus was primarily on the mechanical system design and integration—making sure the
-    chassis, drivetrain, and component placement could survive repeated runs and perform
-    consistently.
+    I focused primarily on mechanical system design and integration—ensuring the chassis,
+    drivetrain, and component placement could survive repeated runs and perform consistently
+    under dynamic loading.
   </p>
+
+  <!-- IMAGE (CORRECT PATH + POSITION) -->
+  <img
+    class="project-img"
+    src="../images/autonomous-vehicle/cad-car.png"
+    alt="Autonomous vehicle CAD assembly">
+
+  <div class="caption">
+    Full vehicle CAD assembly used to evaluate packaging, drivetrain layout,
+    and subsystem integration.
+  </div>
 
   <h2>Design Focus</h2>
   <ul>
-    <li>Chassis stiffness and structural reinforcement under torque load</li>
+    <li>Chassis stiffness and reinforcement under high torque loads</li>
     <li>Drivetrain alignment to reduce mechanical losses</li>
     <li>Component placement for stability, accessibility, and wiring robustness</li>
     <li>Iterative debugging through physical testing</li>
   </ul>
-
-  <img src="../images/autonomous-vehicle/cad-car.png" alt="Autonomous vehicle CAD assembly">
-  <div class="caption">
-    Full vehicle CAD assembly used to evaluate packaging, drivetrain layout, and subsystem integration.
-  </div>
-
 </div>
 
 </body>

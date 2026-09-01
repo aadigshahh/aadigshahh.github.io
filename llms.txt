@@ -33,7 +33,7 @@ Owned RevOps at an AI security startup, managing Salesforce operations, lead rou
 Sole Southern California scout. Sourced and evaluated 30+ startups across deep tech, aerospace, climate, drones, and AI. Met with founders, conducted product diligence and competitive mapping, and prepared investment summaries for review by the investment team.
 
 ### Ernst & Young (EY) · Intern - Technology Consulting (May 2025 - Aug 2025)
-Only intern working directly with partners on a 45-person team supporting a S$10M Singapore government contract renewal. Supported tender repricing and scope negotiations, built budget models up to S$10M, and produced executive strategy decks for senior client and government leadership.
+Only intern working directly with partners on a 45-person team supporting a $10M Singapore government contract renewal. Supported tender repricing and scope negotiations, built budget models up to S$8M, and produced executive strategy decks for senior client and government leadership.
 
 ### Bain Capital · Summer Analyst - IndiaRF Private Equity (Jun 2024 - Aug 2024)
 Sole undergraduate intern on a live $100M+ private equity transaction; the target company was subsequently acquired. Conducted commercial diligence on 5+ companies covering market sizing, competitive mapping, and key risk assessment. Prepared investment memos for senior leadership during deal evaluation.
@@ -45,6 +45,8 @@ Performed aerothermal and structural analysis of rocket nozzles and bulkheads in
 
 Essays on AI, building, and how the world is changing: https://aadishah.xyz/#thoughts
 
+- Access Is the Product (August 2026)
+- The Graph Is Not the Relationship (July 2026)
 - You Cannot Prompt Your Way Around Thermodynamics (June 2026)
 - College Isn't Dying. The Apprenticeship Is. (May 2026)
 - Most Design Forces a Choice (April 2026)
